@@ -1,0 +1,854 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 10.00.40219.01 (cd007e3d).
+//
+// c:\users\vitaliy\desktop\zkfinger sdk lite version (ver 2.3.3.5)\samples\vc\debug\biokey.tli
+//
+// Wrapper implementations for Win32 type library biokey.ocx
+// compiler-generated file created 10/15/15 at 16:49:00 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface IZKFPEngX wrapper method implementations
+//
+
+inline long IZKFPEngX::GetEnrollCount ( ) {
+    long _result = 0;
+    HRESULT _hr = get_EnrollCount(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IZKFPEngX::PutEnrollCount ( long Value ) {
+    HRESULT _hr = put_EnrollCount(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL IZKFPEngX::VerFinger ( VARIANT * regTemplate, const _variant_t & verTemplate, VARIANT_BOOL ADoLearning, VARIANT_BOOL * ARegFeatureChanged ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_VerFinger(regTemplate, verTemplate, ADoLearning, ARegFeatureChanged, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IZKFPEngX::VerRegFingerFile ( _bstr_t regTemplateFile, const _variant_t & verTemplate, VARIANT_BOOL ADoLearning, VARIANT_BOOL * ARegFeatureChanged ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_VerRegFingerFile(regTemplateFile, verTemplate, ADoLearning, ARegFeatureChanged, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IZKFPEngX::PrintImageAt ( OLE_HANDLE hdc, long x, long y, long aWidth, long aHeight ) {
+    HRESULT _hr = raw_PrintImageAt(hdc, x, y, aWidth, aHeight);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IZKFPEngX::PrintImageEllipseAt ( OLE_HANDLE hdc, long x, long y, long aWidth, long aHeight, OLE_COLOR bkColor ) {
+    HRESULT _hr = raw_PrintImageEllipseAt(hdc, x, y, aWidth, aHeight, bkColor);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IZKFPEngX::BeginEnroll ( ) {
+    HRESULT _hr = raw_BeginEnroll();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline VARIANT_BOOL IZKFPEngX::SaveTemplate ( _bstr_t FileName, const _variant_t & ATemplate ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_SaveTemplate(FileName, ATemplate, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IZKFPEngX::SaveBitmap ( _bstr_t FileName ) {
+    HRESULT _hr = raw_SaveBitmap(FileName);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IZKFPEngX::SaveJPG ( _bstr_t FileName ) {
+    HRESULT _hr = raw_SaveJPG(FileName);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline long IZKFPEngX::InitEngine ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_InitEngine(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IZKFPEngX::GetSensorIndex ( ) {
+    long _result = 0;
+    HRESULT _hr = get_SensorIndex(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IZKFPEngX::PutSensorIndex ( long Value ) {
+    HRESULT _hr = put_SensorIndex(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline HRESULT IZKFPEngX::CancelEnroll ( ) {
+    HRESULT _hr = raw_CancelEnroll();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline long IZKFPEngX::CreateFPCacheDB ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_CreateFPCacheDB(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IZKFPEngX::FreeFPCacheDB ( long fpcHandle ) {
+    HRESULT _hr = raw_FreeFPCacheDB(fpcHandle);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline long IZKFPEngX::AddRegTemplateToFPCacheDB ( long fpcHandle, long FPID, const _variant_t & pRegTemplate ) {
+    long _result = 0;
+    HRESULT _hr = raw_AddRegTemplateToFPCacheDB(fpcHandle, FPID, pRegTemplate, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IZKFPEngX::RemoveRegTemplateFromFPCacheDB ( long fpcHandle, long FPID ) {
+    long _result = 0;
+    HRESULT _hr = raw_RemoveRegTemplateFromFPCacheDB(fpcHandle, FPID, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IZKFPEngX::AddRegTemplateFileToFPCacheDB ( long fpcHandle, long FPID, _bstr_t pRegTemplateFile ) {
+    long _result = 0;
+    HRESULT _hr = raw_AddRegTemplateFileToFPCacheDB(fpcHandle, FPID, pRegTemplateFile, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IZKFPEngX::GetThreshold ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Threshold(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IZKFPEngX::PutThreshold ( long Value ) {
+    HRESULT _hr = put_Threshold(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL IZKFPEngX::DongleIsExist ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_DongleIsExist(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IZKFPEngX::DongleUserID ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_DongleUserID(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IZKFPEngX::DongleSeed ( long * lp2, long * p1, long * p2, long * p3, long * p4 ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_DongleSeed(lp2, p1, p2, p3, p4, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IZKFPEngX::DongleMemRead ( long * p1, long * p2, VARIANT * buf ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_DongleMemRead(p1, p2, buf, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IZKFPEngX::DongleMemWrite ( long * p1, long * p2, VARIANT * buf ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_DongleMemWrite(p1, p2, buf, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IZKFPEngX::VerFingerFromFile ( _bstr_t regTemplateFile, _bstr_t verTemplateFile, VARIANT_BOOL ADoLearning, VARIANT_BOOL * ARegFeatureChanged ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_VerFingerFromFile(regTemplateFile, verTemplateFile, ADoLearning, ARegFeatureChanged, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IZKFPEngX::GetVerTplFileName ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_VerTplFileName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IZKFPEngX::PutVerTplFileName ( _bstr_t Value ) {
+    HRESULT _hr = put_VerTplFileName(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IZKFPEngX::GetRegTplFileName ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_RegTplFileName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IZKFPEngX::PutRegTplFileName ( _bstr_t Value ) {
+    HRESULT _hr = put_RegTplFileName(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _variant_t IZKFPEngX::GetTemplate ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_GetTemplate(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline VARIANT_BOOL IZKFPEngX::GetFingerImage ( VARIANT * AFingerImage ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_GetFingerImage(AFingerImage, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IZKFPEngX::GetOneToOneThreshold ( ) {
+    long _result = 0;
+    HRESULT _hr = get_OneToOneThreshold(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IZKFPEngX::PutOneToOneThreshold ( long Value ) {
+    HRESULT _hr = put_OneToOneThreshold(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL IZKFPEngX::IsOneToOneTemplate ( const _variant_t & ATemplate ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_IsOneToOneTemplate(ATemplate, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IZKFPEngX::ModifyTemplate ( VARIANT * ATemplate, VARIANT_BOOL AOneToOne ) {
+    HRESULT _hr = raw_ModifyTemplate(ATemplate, AOneToOne);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IZKFPEngX::FlushFPImages ( ) {
+    HRESULT _hr = raw_FlushFPImages();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline VARIANT_BOOL IZKFPEngX::GetActive ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_Active(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IZKFPEngX::PutActive ( VARIANT_BOOL Value ) {
+    HRESULT _hr = put_Active(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL IZKFPEngX::GetIsRegister ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_IsRegister(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IZKFPEngX::PutIsRegister ( VARIANT_BOOL Value ) {
+    HRESULT _hr = put_IsRegister(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IZKFPEngX::GetEnrollIndex ( ) {
+    long _result = 0;
+    HRESULT _hr = get_EnrollIndex(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IZKFPEngX::PutEnrollIndex ( long Value ) {
+    HRESULT _hr = put_EnrollIndex(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IZKFPEngX::GetSensorSN ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_SensorSN(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IZKFPEngX::PutSensorSN ( _bstr_t Value ) {
+    HRESULT _hr = put_SensorSN(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IZKFPEngX::GetFPEngineVersion ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_FPEngineVersion(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IZKFPEngX::PutFPEngineVersion ( _bstr_t Value ) {
+    HRESULT _hr = put_FPEngineVersion(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IZKFPEngX::GetImageWidth ( ) {
+    long _result = 0;
+    HRESULT _hr = get_ImageWidth(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IZKFPEngX::PutImageWidth ( long Value ) {
+    HRESULT _hr = put_ImageWidth(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IZKFPEngX::GetImageHeight ( ) {
+    long _result = 0;
+    HRESULT _hr = get_ImageHeight(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IZKFPEngX::PutImageHeight ( long Value ) {
+    HRESULT _hr = put_ImageHeight(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IZKFPEngX::GetSensorCount ( ) {
+    long _result = 0;
+    HRESULT _hr = get_SensorCount(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IZKFPEngX::PutSensorCount ( long Value ) {
+    HRESULT _hr = put_SensorCount(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IZKFPEngX::GetTemplateLen ( ) {
+    long _result = 0;
+    HRESULT _hr = get_TemplateLen(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IZKFPEngX::PutTemplateLen ( long Value ) {
+    HRESULT _hr = put_TemplateLen(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL IZKFPEngX::GetEngineValid ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_EngineValid(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IZKFPEngX::PutEngineValid ( VARIANT_BOOL Value ) {
+    HRESULT _hr = put_EngineValid(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL IZKFPEngX::DecodeTemplate ( _bstr_t ASour, VARIANT * ADest ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_DecodeTemplate(ASour, ADest, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IZKFPEngX::EncodeTemplate ( const _variant_t & ASour, BSTR * ADest ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_EncodeTemplate(ASour, ADest, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IZKFPEngX::BeginCapture ( ) {
+    HRESULT _hr = raw_BeginCapture();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IZKFPEngX::CancelCapture ( ) {
+    HRESULT _hr = raw_CancelCapture();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IZKFPEngX::EndEngine ( ) {
+    HRESULT _hr = raw_EndEngine();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _variant_t IZKFPEngX::DecodeTemplate1 ( _bstr_t ASour ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_DecodeTemplate1(ASour, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline _bstr_t IZKFPEngX::EncodeTemplate1 ( const _variant_t & ASour ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_EncodeTemplate1(ASour, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IZKFPEngX::AddRegTemplateStrToFPCacheDB ( long fpcHandle, long FPID, _bstr_t ARegTemplateStr ) {
+    long _result = 0;
+    HRESULT _hr = raw_AddRegTemplateStrToFPCacheDB(fpcHandle, FPID, ARegTemplateStr, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IZKFPEngX::VerFingerFromStr ( BSTR * regTemplateStr, _bstr_t verTemplateStr, VARIANT_BOOL ADoLearning, VARIANT_BOOL * ARegFeatureChanged ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_VerFingerFromStr(regTemplateStr, verTemplateStr, ADoLearning, ARegFeatureChanged, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IZKFPEngX::GetTemplateAsString ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetTemplateAsString(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL IZKFPEngX::IsOneToOneTemplateStr ( _bstr_t ATemplate ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_IsOneToOneTemplateStr(ATemplate, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IZKFPEngX::ModifyTemplateStr ( BSTR * ATemplate, VARIANT_BOOL AOneToOne ) {
+    HRESULT _hr = raw_ModifyTemplateStr(ATemplate, AOneToOne);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IZKFPEngX::SaveTemplateStr ( _bstr_t FileName, _bstr_t ATemplateStr ) {
+    HRESULT _hr = raw_SaveTemplateStr(FileName, ATemplateStr);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IZKFPEngX::GetTemplateCount ( long AFPHandle, long * AOneToOneCnt, long * ATotalCnt ) {
+    HRESULT _hr = raw_GetTemplateCount(AFPHandle, AOneToOneCnt, ATotalCnt);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline long IZKFPEngX::IdentificationInFPCacheDB ( long fpcHandle, const _variant_t & pVerTemplate, long * Score, long * ProcessedFPNumber ) {
+    long _result = 0;
+    HRESULT _hr = raw_IdentificationInFPCacheDB(fpcHandle, pVerTemplate, Score, ProcessedFPNumber, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IZKFPEngX::IdentificationFromFileInFPCacheDB ( long fpcHandle, _bstr_t pVerTemplateFile, long * Score, long * ProcessedFPNumber ) {
+    long _result = 0;
+    HRESULT _hr = raw_IdentificationFromFileInFPCacheDB(fpcHandle, pVerTemplateFile, Score, ProcessedFPNumber, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IZKFPEngX::IdentificationFromStrInFPCacheDB ( long fpcHandle, _bstr_t AVerTemplateStr, long * Score, long * ProcessedFPNumber ) {
+    long _result = 0;
+    HRESULT _hr = raw_IdentificationFromStrInFPCacheDB(fpcHandle, AVerTemplateStr, Score, ProcessedFPNumber, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IZKFPEngX::SetAutoIdentifyPara ( VARIANT_BOOL AAutoIdentify, long ACacheDBHandle, long AScore ) {
+    HRESULT _hr = raw_SetAutoIdentifyPara(AAutoIdentify, ACacheDBHandle, AScore);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IZKFPEngX::SetImageDirection ( VARIANT_BOOL AIsImageChange ) {
+    HRESULT _hr = raw_SetImageDirection(AIsImageChange);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline VARIANT_BOOL IZKFPEngX::IsOneToOneTemplateFile ( _bstr_t ATemplateFileName ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_IsOneToOneTemplateFile(ATemplateFileName, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IZKFPEngX::ModifyTemplateFile ( _bstr_t ATemplateFileName, VARIANT_BOOL AOneToOne ) {
+    HRESULT _hr = raw_ModifyTemplateFile(ATemplateFileName, AOneToOne);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _variant_t IZKFPEngX::GetVerTemplate ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_GetVerTemplate(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline long IZKFPEngX::GetVerScore ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_GetVerScore(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IZKFPEngX::AddImageFile ( _bstr_t AFileName, long ADPI ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_AddImageFile(AFileName, ADPI, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IZKFPEngX::SetOneToOnePara ( long ADoLearning, long AMatchSecurity ) {
+    HRESULT _hr = raw_SetOneToOnePara(ADoLearning, AMatchSecurity);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _variant_t IZKFPEngX::CompressTemplate ( _bstr_t ATemplate ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_CompressTemplate(ATemplate, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline _variant_t IZKFPEngX::ConvertAttTemplate ( const _variant_t & ATemplate ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_ConvertAttTemplate(ATemplate, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline VARIANT_BOOL IZKFPEngX::GetForceSecondMatch ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_ForceSecondMatch(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IZKFPEngX::PutForceSecondMatch ( VARIANT_BOOL Value ) {
+    HRESULT _hr = put_ForceSecondMatch(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline VARIANT_BOOL IZKFPEngX::AddBitmap ( OLE_HANDLE BitmapHandle, long ValidRectX1, long ValidRectY1, long ValidRectX2, long ValidRectY2, long DPI ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_AddBitmap(BitmapHandle, ValidRectX1, ValidRectY1, ValidRectX2, ValidRectY2, DPI, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IZKFPEngX::UsingXTFTemplate ( VARIANT_BOOL ADoUsingXTFTemplate ) {
+    HRESULT _hr = raw_UsingXTFTemplate(ADoUsingXTFTemplate);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline long IZKFPEngX::ExtractImageFromURU4000 ( LPSTR AOriImageBuf, long Size, VARIANT_BOOL AAutoIdentify, VARIANT * iResult ) {
+    long _result = 0;
+    HRESULT _hr = raw_ExtractImageFromURU4000(AOriImageBuf, Size, AAutoIdentify, iResult, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _variant_t IZKFPEngX::ConvertToBiokey ( const _variant_t & OriTemplate ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_ConvertToBiokey(OriTemplate, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline VARIANT_BOOL IZKFPEngX::GenRegTemplateAsStringFromFile ( _bstr_t AImageFileName, long ADPI, BSTR * ADest ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_GenRegTemplateAsStringFromFile(AImageFileName, ADPI, ADest, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IZKFPEngX::GenVerTemplateAsStringFromFile ( _bstr_t AImageFileName, long ADPI, BSTR * ADest ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_GenVerTemplateAsStringFromFile(AImageFileName, ADPI, ADest, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IZKFPEngX::ExtractImageFromURU ( _bstr_t AOriImageStr, long Size, VARIANT_BOOL AAutoIdentify, VARIANT * iResult ) {
+    long _result = 0;
+    HRESULT _hr = raw_ExtractImageFromURU(AOriImageStr, Size, AAutoIdentify, iResult, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IZKFPEngX::GetVendor ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_Vendor(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IZKFPEngX::GetProduceName ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_ProduceName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline long IZKFPEngX::SetTemplateLen ( VARIANT * ATemplate, long ALen ) {
+    long _result = 0;
+    HRESULT _hr = raw_SetTemplateLen(ATemplate, ALen, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IZKFPEngX::ControlSensor ( long ACode, long AValue ) {
+    long _result = 0;
+    HRESULT _hr = raw_ControlSensor(ACode, AValue, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IZKFPEngX::GetIsSupportAuxDevice ( ) {
+    long _result = 0;
+    HRESULT _hr = get_IsSupportAuxDevice(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IZKFPEngX::ExtractImageFromTerminal ( const _variant_t & AOriImage, long Size, VARIANT_BOOL AAutoIdentify, VARIANT * iResult ) {
+    long _result = 0;
+    HRESULT _hr = raw_ExtractImageFromTerminal(AOriImage, Size, AAutoIdentify, iResult, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IZKFPEngX::CreateFPCacheDBEx ( ) {
+    long _result = 0;
+    HRESULT _hr = raw_CreateFPCacheDBEx(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IZKFPEngX::FreeFPCacheDBEx ( long fpcHandle ) {
+    HRESULT _hr = raw_FreeFPCacheDBEx(fpcHandle);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline long IZKFPEngX::AddRegTemplateToFPCacheDBEx ( long fpcHandle, long FPID, const _variant_t & pRegTemplate, const _variant_t & pRegTemplate10 ) {
+    long _result = 0;
+    HRESULT _hr = raw_AddRegTemplateToFPCacheDBEx(fpcHandle, FPID, pRegTemplate, pRegTemplate10, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IZKFPEngX::RemoveRegTemplateFromFPCacheDBEx ( long fpcHandle, long FPID ) {
+    long _result = 0;
+    HRESULT _hr = raw_RemoveRegTemplateFromFPCacheDBEx(fpcHandle, FPID, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IZKFPEngX::AddRegTemplateFileToFPCacheDBEx ( long fpcHandle, long FPID, _bstr_t pRegTemplateFile, _bstr_t pRegTemplate10File ) {
+    long _result = 0;
+    HRESULT _hr = raw_AddRegTemplateFileToFPCacheDBEx(fpcHandle, FPID, pRegTemplateFile, pRegTemplate10File, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _variant_t IZKFPEngX::GetTemplateEx ( _bstr_t AFPEngineVersion ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_GetTemplateEx(AFPEngineVersion, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline long IZKFPEngX::AddRegTemplateStrToFPCacheDBEx ( long fpcHandle, long FPID, _bstr_t ARegTemplateStr, _bstr_t ARegTemplate10Str ) {
+    long _result = 0;
+    HRESULT _hr = raw_AddRegTemplateStrToFPCacheDBEx(fpcHandle, FPID, ARegTemplateStr, ARegTemplate10Str, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t IZKFPEngX::GetTemplateAsStringEx ( _bstr_t AFPEngineVersion ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_GetTemplateAsStringEx(AFPEngineVersion, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _variant_t IZKFPEngX::GetVerTemplateEx ( _bstr_t AFPEngineVersion ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_GetVerTemplateEx(AFPEngineVersion, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline VARIANT_BOOL IZKFPEngX::MF_GET_SNR ( long commHandle, long DeviceAddress, unsigned char mode, unsigned char RDM_halt, unsigned char * snr, unsigned char * Value ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_MF_GET_SNR(commHandle, DeviceAddress, mode, RDM_halt, snr, Value, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IZKFPEngX::MF_GetSerNum ( long commHandle, long DeviceAddress, unsigned char * buffer ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_MF_GetSerNum(commHandle, DeviceAddress, buffer, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IZKFPEngX::MF_SetSerNum ( long commHandle, long DeviceAddress, unsigned char * newValue, unsigned char * buffer ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_MF_SetSerNum(commHandle, DeviceAddress, newValue, buffer, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IZKFPEngX::MF_GetVersionNum ( long commHandle, long DeviceAddress, unsigned char * VersionNum ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_MF_GetVersionNum(commHandle, DeviceAddress, VersionNum, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IZKFPEngX::MF_PCDRead ( long commHandle, long DeviceAddress, unsigned char mode, unsigned char blkIndex, unsigned char blkNum, unsigned char * key, unsigned char * buffer ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_MF_PCDRead(commHandle, DeviceAddress, mode, blkIndex, blkNum, key, buffer, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IZKFPEngX::MF_PCDWrite ( long commHandle, long DeviceAddress, unsigned char mode, unsigned char blkIndex, unsigned char blkNum, unsigned char * key, unsigned char * buffer ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = raw_MF_PCDWrite(commHandle, DeviceAddress, mode, blkIndex, blkNum, key, buffer, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IZKFPEngX::GetReservedParam ( ) {
+    long _result = 0;
+    HRESULT _hr = get_ReservedParam(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IZKFPEngX::GetIsReturnNoLic ( ) {
+    VARIANT_BOOL _result = 0;
+    HRESULT _hr = get_IsReturnNoLic(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IZKFPEngX::PutIsReturnNoLic ( VARIANT_BOOL Value ) {
+    HRESULT _hr = put_IsReturnNoLic(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long IZKFPEngX::GetLastQuality ( ) {
+    long _result = 0;
+    HRESULT _hr = get_LastQuality(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IZKFPEngX::GetLowestQuality ( ) {
+    long _result = 0;
+    HRESULT _hr = get_LowestQuality(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IZKFPEngX::PutLowestQuality ( long Value ) {
+    HRESULT _hr = put_LowestQuality(Value);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// dispinterface IZKFPEngXEvents wrapper method implementations
+//
+
+inline HRESULT IZKFPEngXEvents::OnFeatureInfo ( long AQuality ) {
+    return _com_dispatch_method(this, 0x5, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0003", AQuality);
+}
+
+inline HRESULT IZKFPEngXEvents::OnImageReceived ( VARIANT_BOOL * AImageValid ) {
+    return _com_dispatch_method(this, 0x8, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x400b", AImageValid);
+}
+
+inline HRESULT IZKFPEngXEvents::OnEnroll ( VARIANT_BOOL ActionResult, const _variant_t & ATemplate ) {
+    return _com_dispatch_method(this, 0x9, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x000b\x000c", ActionResult, &ATemplate);
+}
+
+inline HRESULT IZKFPEngXEvents::OnCapture ( VARIANT_BOOL ActionResult, const _variant_t & ATemplate ) {
+    return _com_dispatch_method(this, 0xa, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x000b\x000c", ActionResult, &ATemplate);
+}
+
+inline HRESULT IZKFPEngXEvents::OnCaptureToFile ( VARIANT_BOOL ActionResult ) {
+    return _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x000b", ActionResult);
+}
+
+inline HRESULT IZKFPEngXEvents::OnEnrollToFile ( VARIANT_BOOL ActionResult ) {
+    return _com_dispatch_method(this, 0xb, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x000b", ActionResult);
+}
+
+inline HRESULT IZKFPEngXEvents::OnFingerTouching ( ) {
+    HRESULT _result = 0;
+    _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_ERROR, (void*)&_result, NULL);
+    return _result;
+}
+
+inline HRESULT IZKFPEngXEvents::OnFingerLeaving ( ) {
+    HRESULT _result = 0;
+    _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_ERROR, (void*)&_result, NULL);
+    return _result;
+}

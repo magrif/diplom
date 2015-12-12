@@ -1,0 +1,855 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 10.00.40219.01 (cd007e3d).
+//
+// c:\users\vitaliy\desktop\zkfinger sdk lite version (ver 2.3.3.5)\samples\vc\debug\biokey.tlh
+//
+// C++ source equivalent of Win32 type library biokey.ocx
+// compiler-generated file created 10/15/15 at 16:49:00 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace ZKFPEngXControl {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("d95cb779-00cb-4b49-97b9-9f0b61cab3c1"))
+/* LIBID */ __ZKFPEngXControl;
+struct __declspec(uuid("161a8d2d-3dde-4744-ba38-08f900d10d6d"))
+/* dual interface */ IZKFPEngX;
+struct __declspec(uuid("8aee2e53-7ebe-4b51-a964-009adc68d107"))
+/* dispinterface */ IZKFPEngXEvents;
+struct /* coclass */ ZKFPEngX;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IZKFPEngX, __uuidof(IZKFPEngX));
+_COM_SMARTPTR_TYPEDEF(IZKFPEngXEvents, __uuidof(IZKFPEngXEvents));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("161a8d2d-3dde-4744-ba38-08f900d10d6d"))
+IZKFPEngX : IDispatch
+{
+    //
+    // Property data
+    //
+
+    //__declspec(property(get=GetRegTplFileName,put=PutRegTplFileName))
+    _bstr_t RegTplFileName;
+    //__declspec(property(get=GetEnrollIndex,put=PutEnrollIndex))
+    long EnrollIndex;
+    //__declspec(property(get=GetOneToOneThreshold,put=PutOneToOneThreshold))
+    long OneToOneThreshold;
+    //__declspec(property(get=GetEnrollCount,put=PutEnrollCount))
+    long EnrollCount;
+    //__declspec(property(get=GetIsReturnNoLic,put=PutIsReturnNoLic))
+    VARIANT_BOOL IsReturnNoLic;
+    //__declspec(property(get=GetReservedParam))
+    long ReservedParam;
+    //__declspec(property(get=GetSensorSN,put=PutSensorSN))
+    _bstr_t SensorSN;
+    //__declspec(property(get=GetFPEngineVersion,put=PutFPEngineVersion))
+    _bstr_t FPEngineVersion;
+    //__declspec(property(get=GetImageWidth,put=PutImageWidth))
+    long ImageWidth;
+    //__declspec(property(get=GetImageHeight,put=PutImageHeight))
+    long ImageHeight;
+    //__declspec(property(get=GetSensorCount,put=PutSensorCount))
+    long SensorCount;
+    //__declspec(property(get=GetTemplateLen,put=PutTemplateLen))
+    long TemplateLen;
+    //__declspec(property(get=GetEngineValid,put=PutEngineValid))
+    VARIANT_BOOL EngineValid;
+    //__declspec(property(get=GetLastQuality))
+    long LastQuality;
+   // __declspec(property(get=GetLowestQuality,put=PutLowestQuality))
+    long LowestQuality;
+    //__declspec(property(get=GetThreshold,put=PutThreshold))
+    long Threshold;
+    //__declspec(property(get=GetForceSecondMatch,put=PutForceSecondMatch))
+    VARIANT_BOOL ForceSecondMatch;
+    //__declspec(property(get=GetVendor))
+    _bstr_t Vendor;
+    //__declspec(property(get=GetProduceName))
+    _bstr_t ProduceName;
+    //__declspec(property(get=GetActive,put=PutActive))
+    VARIANT_BOOL Active;
+    //__declspec(property(get=GetIsSupportAuxDevice))
+    long IsSupportAuxDevice;
+    //__declspec(property(get=GetSensorIndex,put=PutSensorIndex))
+    long SensorIndex;
+    //__declspec(property(get=GetIsRegister,put=PutIsRegister))
+    VARIANT_BOOL IsRegister;
+    //__declspec(property(get=GetVerTplFileName,put=PutVerTplFileName))
+    _bstr_t VerTplFileName;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long GetEnrollCount ( );
+    void PutEnrollCount (
+        long Value );
+    VARIANT_BOOL VerFinger (
+        VARIANT * regTemplate,
+        const _variant_t & verTemplate,
+        VARIANT_BOOL ADoLearning,
+        VARIANT_BOOL * ARegFeatureChanged );
+    VARIANT_BOOL VerRegFingerFile (
+        _bstr_t regTemplateFile,
+        const _variant_t & verTemplate,
+        VARIANT_BOOL ADoLearning,
+        VARIANT_BOOL * ARegFeatureChanged );
+    HRESULT PrintImageAt (
+        OLE_HANDLE hdc,
+        long x,
+        long y,
+        long aWidth,
+        long aHeight );
+    HRESULT PrintImageEllipseAt (
+        OLE_HANDLE hdc,
+        long x,
+        long y,
+        long aWidth,
+        long aHeight,
+        OLE_COLOR bkColor );
+    HRESULT BeginEnroll ( );
+    VARIANT_BOOL SaveTemplate (
+        _bstr_t FileName,
+        const _variant_t & ATemplate );
+    HRESULT SaveBitmap (
+        _bstr_t FileName );
+    HRESULT SaveJPG (
+        _bstr_t FileName );
+    long InitEngine ( );
+    long GetSensorIndex ( );
+    void PutSensorIndex (
+        long Value );
+    HRESULT CancelEnroll ( );
+    long CreateFPCacheDB ( );
+    HRESULT FreeFPCacheDB (
+        long fpcHandle );
+    long AddRegTemplateToFPCacheDB (
+        long fpcHandle,
+        long FPID,
+        const _variant_t & pRegTemplate );
+    long RemoveRegTemplateFromFPCacheDB (
+        long fpcHandle,
+        long FPID );
+    long AddRegTemplateFileToFPCacheDB (
+        long fpcHandle,
+        long FPID,
+        _bstr_t pRegTemplateFile );
+    long GetThreshold ( );
+    void PutThreshold (
+        long Value );
+    VARIANT_BOOL DongleIsExist ( );
+    long DongleUserID ( );
+    VARIANT_BOOL DongleSeed (
+        long * lp2,
+        long * p1,
+        long * p2,
+        long * p3,
+        long * p4 );
+    VARIANT_BOOL DongleMemRead (
+        long * p1,
+        long * p2,
+        VARIANT * buf );
+    VARIANT_BOOL DongleMemWrite (
+        long * p1,
+        long * p2,
+        VARIANT * buf );
+    VARIANT_BOOL VerFingerFromFile (
+        _bstr_t regTemplateFile,
+        _bstr_t verTemplateFile,
+        VARIANT_BOOL ADoLearning,
+        VARIANT_BOOL * ARegFeatureChanged );
+    _bstr_t GetVerTplFileName ( );
+    void PutVerTplFileName (
+        _bstr_t Value );
+    _bstr_t GetRegTplFileName ( );
+    void PutRegTplFileName (
+        _bstr_t Value );
+    _variant_t GetTemplate ( );
+    VARIANT_BOOL GetFingerImage (
+        VARIANT * AFingerImage );
+    long GetOneToOneThreshold ( );
+    void PutOneToOneThreshold (
+        long Value );
+    VARIANT_BOOL IsOneToOneTemplate (
+        const _variant_t & ATemplate );
+    HRESULT ModifyTemplate (
+        VARIANT * ATemplate,
+        VARIANT_BOOL AOneToOne );
+    HRESULT FlushFPImages ( );
+    VARIANT_BOOL GetActive ( );
+    void PutActive (
+        VARIANT_BOOL Value );
+    VARIANT_BOOL GetIsRegister ( );
+    void PutIsRegister (
+        VARIANT_BOOL Value );
+    long GetEnrollIndex ( );
+    void PutEnrollIndex (
+        long Value );
+    _bstr_t GetSensorSN ( );
+    void PutSensorSN (
+        _bstr_t Value );
+    _bstr_t GetFPEngineVersion ( );
+    void PutFPEngineVersion (
+        _bstr_t Value );
+    long GetImageWidth ( );
+    void PutImageWidth (
+        long Value );
+    long GetImageHeight ( );
+    void PutImageHeight (
+        long Value );
+    long GetSensorCount ( );
+    void PutSensorCount (
+        long Value );
+    long GetTemplateLen ( );
+    void PutTemplateLen (
+        long Value );
+    VARIANT_BOOL GetEngineValid ( );
+    void PutEngineValid (
+        VARIANT_BOOL Value );
+    VARIANT_BOOL DecodeTemplate (
+        _bstr_t ASour,
+        VARIANT * ADest );
+    VARIANT_BOOL EncodeTemplate (
+        const _variant_t & ASour,
+        BSTR * ADest );
+    HRESULT BeginCapture ( );
+    HRESULT CancelCapture ( );
+    HRESULT EndEngine ( );
+    _variant_t DecodeTemplate1 (
+        _bstr_t ASour );
+    _bstr_t EncodeTemplate1 (
+        const _variant_t & ASour );
+    long AddRegTemplateStrToFPCacheDB (
+        long fpcHandle,
+        long FPID,
+        _bstr_t ARegTemplateStr );
+    VARIANT_BOOL VerFingerFromStr (
+        BSTR * regTemplateStr,
+        _bstr_t verTemplateStr,
+        VARIANT_BOOL ADoLearning,
+        VARIANT_BOOL * ARegFeatureChanged );
+    _bstr_t GetTemplateAsString ( );
+    VARIANT_BOOL IsOneToOneTemplateStr (
+        _bstr_t ATemplate );
+    HRESULT ModifyTemplateStr (
+        BSTR * ATemplate,
+        VARIANT_BOOL AOneToOne );
+    HRESULT SaveTemplateStr (
+        _bstr_t FileName,
+        _bstr_t ATemplateStr );
+    HRESULT GetTemplateCount (
+        long AFPHandle,
+        long * AOneToOneCnt,
+        long * ATotalCnt );
+    long IdentificationInFPCacheDB (
+        long fpcHandle,
+        const _variant_t & pVerTemplate,
+        long * Score,
+        long * ProcessedFPNumber );
+    long IdentificationFromFileInFPCacheDB (
+        long fpcHandle,
+        _bstr_t pVerTemplateFile,
+        long * Score,
+        long * ProcessedFPNumber );
+    long IdentificationFromStrInFPCacheDB (
+        long fpcHandle,
+        _bstr_t AVerTemplateStr,
+        long * Score,
+        long * ProcessedFPNumber );
+    HRESULT SetAutoIdentifyPara (
+        VARIANT_BOOL AAutoIdentify,
+        long ACacheDBHandle,
+        long AScore );
+    HRESULT SetImageDirection (
+        VARIANT_BOOL AIsImageChange );
+    VARIANT_BOOL IsOneToOneTemplateFile (
+        _bstr_t ATemplateFileName );
+    HRESULT ModifyTemplateFile (
+        _bstr_t ATemplateFileName,
+        VARIANT_BOOL AOneToOne );
+    _variant_t GetVerTemplate ( );
+    long GetVerScore ( );
+    VARIANT_BOOL AddImageFile (
+        _bstr_t AFileName,
+        long ADPI );
+    HRESULT SetOneToOnePara (
+        long ADoLearning,
+        long AMatchSecurity );
+    _variant_t CompressTemplate (
+        _bstr_t ATemplate );
+    _variant_t ConvertAttTemplate (
+        const _variant_t & ATemplate );
+    VARIANT_BOOL GetForceSecondMatch ( );
+    void PutForceSecondMatch (
+        VARIANT_BOOL Value );
+    VARIANT_BOOL AddBitmap (
+        OLE_HANDLE BitmapHandle,
+        long ValidRectX1,
+        long ValidRectY1,
+        long ValidRectX2,
+        long ValidRectY2,
+        long DPI );
+    HRESULT UsingXTFTemplate (
+        VARIANT_BOOL ADoUsingXTFTemplate );
+    long ExtractImageFromURU4000 (
+        LPSTR AOriImageBuf,
+        long Size,
+        VARIANT_BOOL AAutoIdentify,
+        VARIANT * iResult );
+    _variant_t ConvertToBiokey (
+        const _variant_t & OriTemplate );
+    VARIANT_BOOL GenRegTemplateAsStringFromFile (
+        _bstr_t AImageFileName,
+        long ADPI,
+        BSTR * ADest );
+    VARIANT_BOOL GenVerTemplateAsStringFromFile (
+        _bstr_t AImageFileName,
+        long ADPI,
+        BSTR * ADest );
+    long ExtractImageFromURU (
+        _bstr_t AOriImageStr,
+        long Size,
+        VARIANT_BOOL AAutoIdentify,
+        VARIANT * iResult );
+    _bstr_t GetVendor ( );
+    _bstr_t GetProduceName ( );
+    long SetTemplateLen (
+        VARIANT * ATemplate,
+        long ALen );
+    long ControlSensor (
+        long ACode,
+        long AValue );
+    long GetIsSupportAuxDevice ( );
+    long ExtractImageFromTerminal (
+        const _variant_t & AOriImage,
+        long Size,
+        VARIANT_BOOL AAutoIdentify,
+        VARIANT * iResult );
+    long CreateFPCacheDBEx ( );
+    HRESULT FreeFPCacheDBEx (
+        long fpcHandle );
+    long AddRegTemplateToFPCacheDBEx (
+        long fpcHandle,
+        long FPID,
+        const _variant_t & pRegTemplate,
+        const _variant_t & pRegTemplate10 );
+    long RemoveRegTemplateFromFPCacheDBEx (
+        long fpcHandle,
+        long FPID );
+    long AddRegTemplateFileToFPCacheDBEx (
+        long fpcHandle,
+        long FPID,
+        _bstr_t pRegTemplateFile,
+        _bstr_t pRegTemplate10File );
+    _variant_t GetTemplateEx (
+        _bstr_t AFPEngineVersion );
+    long AddRegTemplateStrToFPCacheDBEx (
+        long fpcHandle,
+        long FPID,
+        _bstr_t ARegTemplateStr,
+        _bstr_t ARegTemplate10Str );
+    _bstr_t GetTemplateAsStringEx (
+        _bstr_t AFPEngineVersion );
+    _variant_t GetVerTemplateEx (
+        _bstr_t AFPEngineVersion );
+    VARIANT_BOOL MF_GET_SNR (
+        long commHandle,
+        long DeviceAddress,
+        unsigned char mode,
+        unsigned char RDM_halt,
+        unsigned char * snr,
+        unsigned char * Value );
+    VARIANT_BOOL MF_GetSerNum (
+        long commHandle,
+        long DeviceAddress,
+        unsigned char * buffer );
+    VARIANT_BOOL MF_SetSerNum (
+        long commHandle,
+        long DeviceAddress,
+        unsigned char * newValue,
+        unsigned char * buffer );
+    VARIANT_BOOL MF_GetVersionNum (
+        long commHandle,
+        long DeviceAddress,
+        unsigned char * VersionNum );
+    VARIANT_BOOL MF_PCDRead (
+        long commHandle,
+        long DeviceAddress,
+        unsigned char mode,
+        unsigned char blkIndex,
+        unsigned char blkNum,
+        unsigned char * key,
+        unsigned char * buffer );
+    VARIANT_BOOL MF_PCDWrite (
+        long commHandle,
+        long DeviceAddress,
+        unsigned char mode,
+        unsigned char blkIndex,
+        unsigned char blkNum,
+        unsigned char * key,
+        unsigned char * buffer );
+    long GetReservedParam ( );
+    VARIANT_BOOL GetIsReturnNoLic ( );
+    void PutIsReturnNoLic (
+        VARIANT_BOOL Value );
+    long GetLastQuality ( );
+    long GetLowestQuality ( );
+    void PutLowestQuality (
+        long Value );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_EnrollCount (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall put_EnrollCount (
+        /*[in]*/ long Value ) = 0;
+      virtual HRESULT __stdcall raw_VerFinger (
+        /*[in,out]*/ VARIANT * regTemplate,
+        /*[in]*/ VARIANT verTemplate,
+        /*[in]*/ VARIANT_BOOL ADoLearning,
+        /*[in,out]*/ VARIANT_BOOL * ARegFeatureChanged,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_VerRegFingerFile (
+        /*[in]*/ BSTR regTemplateFile,
+        /*[in]*/ VARIANT verTemplate,
+        /*[in]*/ VARIANT_BOOL ADoLearning,
+        /*[in,out]*/ VARIANT_BOOL * ARegFeatureChanged,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_PrintImageAt (
+        /*[in]*/ OLE_HANDLE hdc,
+        /*[in]*/ long x,
+        /*[in]*/ long y,
+        /*[in]*/ long aWidth,
+        /*[in]*/ long aHeight ) = 0;
+      virtual HRESULT __stdcall raw_PrintImageEllipseAt (
+        /*[in]*/ OLE_HANDLE hdc,
+        /*[in]*/ long x,
+        /*[in]*/ long y,
+        /*[in]*/ long aWidth,
+        /*[in]*/ long aHeight,
+        /*[in]*/ OLE_COLOR bkColor ) = 0;
+      virtual HRESULT __stdcall raw_BeginEnroll ( ) = 0;
+      virtual HRESULT __stdcall raw_SaveTemplate (
+        /*[in]*/ BSTR FileName,
+        /*[in]*/ VARIANT ATemplate,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_SaveBitmap (
+        /*[in]*/ BSTR FileName ) = 0;
+      virtual HRESULT __stdcall raw_SaveJPG (
+        /*[in]*/ BSTR FileName ) = 0;
+      virtual HRESULT __stdcall raw_InitEngine (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_SensorIndex (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall put_SensorIndex (
+        /*[in]*/ long Value ) = 0;
+      virtual HRESULT __stdcall raw_CancelEnroll ( ) = 0;
+      virtual HRESULT __stdcall raw_CreateFPCacheDB (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_FreeFPCacheDB (
+        /*[in]*/ long fpcHandle ) = 0;
+      virtual HRESULT __stdcall raw_AddRegTemplateToFPCacheDB (
+        /*[in]*/ long fpcHandle,
+        /*[in]*/ long FPID,
+        /*[in]*/ VARIANT pRegTemplate,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_RemoveRegTemplateFromFPCacheDB (
+        /*[in]*/ long fpcHandle,
+        /*[in]*/ long FPID,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_AddRegTemplateFileToFPCacheDB (
+        /*[in]*/ long fpcHandle,
+        /*[in]*/ long FPID,
+        /*[in]*/ BSTR pRegTemplateFile,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_Threshold (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall put_Threshold (
+        /*[in]*/ long Value ) = 0;
+      virtual HRESULT __stdcall raw_DongleIsExist (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_DongleUserID (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_DongleSeed (
+        /*[in,out]*/ long * lp2,
+        /*[in,out]*/ long * p1,
+        /*[in,out]*/ long * p2,
+        /*[in,out]*/ long * p3,
+        /*[in,out]*/ long * p4,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_DongleMemRead (
+        /*[in,out]*/ long * p1,
+        /*[in,out]*/ long * p2,
+        /*[in,out]*/ VARIANT * buf,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_DongleMemWrite (
+        /*[in,out]*/ long * p1,
+        /*[in,out]*/ long * p2,
+        /*[in,out]*/ VARIANT * buf,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_VerFingerFromFile (
+        /*[in]*/ BSTR regTemplateFile,
+        /*[in]*/ BSTR verTemplateFile,
+        /*[in]*/ VARIANT_BOOL ADoLearning,
+        /*[in,out]*/ VARIANT_BOOL * ARegFeatureChanged,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall get_VerTplFileName (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_VerTplFileName (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_RegTplFileName (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_RegTplFileName (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall raw_GetTemplate (
+        /*[out,retval]*/ VARIANT * Value ) = 0;
+      virtual HRESULT __stdcall raw_GetFingerImage (
+        /*[in,out]*/ VARIANT * AFingerImage,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall get_OneToOneThreshold (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall put_OneToOneThreshold (
+        /*[in]*/ long Value ) = 0;
+      virtual HRESULT __stdcall raw_IsOneToOneTemplate (
+        /*[in]*/ VARIANT ATemplate,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_ModifyTemplate (
+        /*[in,out]*/ VARIANT * ATemplate,
+        /*[in]*/ VARIANT_BOOL AOneToOne ) = 0;
+      virtual HRESULT __stdcall raw_FlushFPImages ( ) = 0;
+      virtual HRESULT __stdcall get_Active (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_Active (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall get_IsRegister (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_IsRegister (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall get_EnrollIndex (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall put_EnrollIndex (
+        /*[in]*/ long Value ) = 0;
+      virtual HRESULT __stdcall get_SensorSN (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_SensorSN (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_FPEngineVersion (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall put_FPEngineVersion (
+        /*[in]*/ BSTR Value ) = 0;
+      virtual HRESULT __stdcall get_ImageWidth (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall put_ImageWidth (
+        /*[in]*/ long Value ) = 0;
+      virtual HRESULT __stdcall get_ImageHeight (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall put_ImageHeight (
+        /*[in]*/ long Value ) = 0;
+      virtual HRESULT __stdcall get_SensorCount (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall put_SensorCount (
+        /*[in]*/ long Value ) = 0;
+      virtual HRESULT __stdcall get_TemplateLen (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall put_TemplateLen (
+        /*[in]*/ long Value ) = 0;
+      virtual HRESULT __stdcall get_EngineValid (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_EngineValid (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall raw_DecodeTemplate (
+        /*[in]*/ BSTR ASour,
+        /*[in,out]*/ VARIANT * ADest,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_EncodeTemplate (
+        /*[in]*/ VARIANT ASour,
+        /*[in,out]*/ BSTR * ADest,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_BeginCapture ( ) = 0;
+      virtual HRESULT __stdcall raw_CancelCapture ( ) = 0;
+      virtual HRESULT __stdcall raw_EndEngine ( ) = 0;
+      virtual HRESULT __stdcall raw_DecodeTemplate1 (
+        /*[in]*/ BSTR ASour,
+        /*[out,retval]*/ VARIANT * Value ) = 0;
+      virtual HRESULT __stdcall raw_EncodeTemplate1 (
+        /*[in]*/ VARIANT ASour,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall raw_AddRegTemplateStrToFPCacheDB (
+        /*[in]*/ long fpcHandle,
+        /*[in]*/ long FPID,
+        /*[in]*/ BSTR ARegTemplateStr,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_VerFingerFromStr (
+        /*[in,out]*/ BSTR * regTemplateStr,
+        /*[in]*/ BSTR verTemplateStr,
+        /*[in]*/ VARIANT_BOOL ADoLearning,
+        /*[in,out]*/ VARIANT_BOOL * ARegFeatureChanged,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_GetTemplateAsString (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall raw_IsOneToOneTemplateStr (
+        /*[in]*/ BSTR ATemplate,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_ModifyTemplateStr (
+        /*[in,out]*/ BSTR * ATemplate,
+        /*[in]*/ VARIANT_BOOL AOneToOne ) = 0;
+      virtual HRESULT __stdcall raw_SaveTemplateStr (
+        /*[in]*/ BSTR FileName,
+        /*[in]*/ BSTR ATemplateStr ) = 0;
+      virtual HRESULT __stdcall raw_GetTemplateCount (
+        /*[in]*/ long AFPHandle,
+        /*[in,out]*/ long * AOneToOneCnt,
+        /*[in,out]*/ long * ATotalCnt ) = 0;
+      virtual HRESULT __stdcall raw_IdentificationInFPCacheDB (
+        /*[in]*/ long fpcHandle,
+        /*[in]*/ VARIANT pVerTemplate,
+        /*[in,out]*/ long * Score,
+        /*[in,out]*/ long * ProcessedFPNumber,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_IdentificationFromFileInFPCacheDB (
+        /*[in]*/ long fpcHandle,
+        /*[in]*/ BSTR pVerTemplateFile,
+        /*[in,out]*/ long * Score,
+        /*[in,out]*/ long * ProcessedFPNumber,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_IdentificationFromStrInFPCacheDB (
+        /*[in]*/ long fpcHandle,
+        /*[in]*/ BSTR AVerTemplateStr,
+        /*[in,out]*/ long * Score,
+        /*[in,out]*/ long * ProcessedFPNumber,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_SetAutoIdentifyPara (
+        /*[in]*/ VARIANT_BOOL AAutoIdentify,
+        /*[in]*/ long ACacheDBHandle,
+        /*[in]*/ long AScore ) = 0;
+      virtual HRESULT __stdcall raw_SetImageDirection (
+        /*[in]*/ VARIANT_BOOL AIsImageChange ) = 0;
+      virtual HRESULT __stdcall raw_IsOneToOneTemplateFile (
+        /*[in]*/ BSTR ATemplateFileName,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_ModifyTemplateFile (
+        /*[in]*/ BSTR ATemplateFileName,
+        /*[in]*/ VARIANT_BOOL AOneToOne ) = 0;
+      virtual HRESULT __stdcall raw_GetVerTemplate (
+        /*[out,retval]*/ VARIANT * Value ) = 0;
+      virtual HRESULT __stdcall raw_GetVerScore (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_AddImageFile (
+        /*[in]*/ BSTR AFileName,
+        /*[in]*/ long ADPI,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_SetOneToOnePara (
+        /*[in]*/ long ADoLearning,
+        /*[in]*/ long AMatchSecurity ) = 0;
+      virtual HRESULT __stdcall raw_CompressTemplate (
+        /*[in]*/ BSTR ATemplate,
+        /*[out,retval]*/ VARIANT * Value ) = 0;
+      virtual HRESULT __stdcall raw_ConvertAttTemplate (
+        /*[in]*/ VARIANT ATemplate,
+        /*[out,retval]*/ VARIANT * Value ) = 0;
+      virtual HRESULT __stdcall get_ForceSecondMatch (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_ForceSecondMatch (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall raw_AddBitmap (
+        /*[in]*/ OLE_HANDLE BitmapHandle,
+        /*[in]*/ long ValidRectX1,
+        /*[in]*/ long ValidRectY1,
+        /*[in]*/ long ValidRectX2,
+        /*[in]*/ long ValidRectY2,
+        /*[in]*/ long DPI,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_UsingXTFTemplate (
+        /*[in]*/ VARIANT_BOOL ADoUsingXTFTemplate ) = 0;
+      virtual HRESULT __stdcall raw_ExtractImageFromURU4000 (
+        /*[in]*/ LPSTR AOriImageBuf,
+        /*[in]*/ long Size,
+        /*[in]*/ VARIANT_BOOL AAutoIdentify,
+        /*[in,out]*/ VARIANT * iResult,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_ConvertToBiokey (
+        /*[in]*/ VARIANT OriTemplate,
+        /*[out,retval]*/ VARIANT * NewTemlate ) = 0;
+      virtual HRESULT __stdcall raw_GenRegTemplateAsStringFromFile (
+        /*[in]*/ BSTR AImageFileName,
+        /*[in]*/ long ADPI,
+        /*[in,out]*/ BSTR * ADest,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_GenVerTemplateAsStringFromFile (
+        /*[in]*/ BSTR AImageFileName,
+        /*[in]*/ long ADPI,
+        /*[in,out]*/ BSTR * ADest,
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall raw_ExtractImageFromURU (
+        /*[in]*/ BSTR AOriImageStr,
+        /*[in]*/ long Size,
+        /*[in]*/ VARIANT_BOOL AAutoIdentify,
+        /*[in,out]*/ VARIANT * iResult,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_Vendor (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall get_ProduceName (
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall raw_SetTemplateLen (
+        /*[in,out]*/ VARIANT * ATemplate,
+        /*[in]*/ long ALen,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_ControlSensor (
+        /*[in]*/ long ACode,
+        /*[in]*/ long AValue,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_IsSupportAuxDevice (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_ExtractImageFromTerminal (
+        /*[in]*/ VARIANT AOriImage,
+        /*[in]*/ long Size,
+        /*[in]*/ VARIANT_BOOL AAutoIdentify,
+        /*[in,out]*/ VARIANT * iResult,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_CreateFPCacheDBEx (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_FreeFPCacheDBEx (
+        /*[in]*/ long fpcHandle ) = 0;
+      virtual HRESULT __stdcall raw_AddRegTemplateToFPCacheDBEx (
+        /*[in]*/ long fpcHandle,
+        /*[in]*/ long FPID,
+        /*[in]*/ VARIANT pRegTemplate,
+        /*[in]*/ VARIANT pRegTemplate10,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_RemoveRegTemplateFromFPCacheDBEx (
+        /*[in]*/ long fpcHandle,
+        /*[in]*/ long FPID,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_AddRegTemplateFileToFPCacheDBEx (
+        /*[in]*/ long fpcHandle,
+        /*[in]*/ long FPID,
+        /*[in]*/ BSTR pRegTemplateFile,
+        /*[in]*/ BSTR pRegTemplate10File,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_GetTemplateEx (
+        /*[in]*/ BSTR AFPEngineVersion,
+        /*[out,retval]*/ VARIANT * Value ) = 0;
+      virtual HRESULT __stdcall raw_AddRegTemplateStrToFPCacheDBEx (
+        /*[in]*/ long fpcHandle,
+        /*[in]*/ long FPID,
+        /*[in]*/ BSTR ARegTemplateStr,
+        /*[in]*/ BSTR ARegTemplate10Str,
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall raw_GetTemplateAsStringEx (
+        /*[in]*/ BSTR AFPEngineVersion,
+        /*[out,retval]*/ BSTR * Value ) = 0;
+      virtual HRESULT __stdcall raw_GetVerTemplateEx (
+        /*[in]*/ BSTR AFPEngineVersion,
+        /*[out,retval]*/ VARIANT * Value ) = 0;
+      virtual HRESULT __stdcall raw_MF_GET_SNR (
+        /*[in]*/ long commHandle,
+        /*[in]*/ long DeviceAddress,
+        /*[in]*/ unsigned char mode,
+        /*[in]*/ unsigned char RDM_halt,
+        /*[in]*/ unsigned char * snr,
+        /*[in]*/ unsigned char * Value,
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall raw_MF_GetSerNum (
+        /*[in]*/ long commHandle,
+        /*[in]*/ long DeviceAddress,
+        /*[in]*/ unsigned char * buffer,
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall raw_MF_SetSerNum (
+        /*[in]*/ long commHandle,
+        /*[in]*/ long DeviceAddress,
+        /*[in]*/ unsigned char * newValue,
+        /*[in]*/ unsigned char * buffer,
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall raw_MF_GetVersionNum (
+        /*[in]*/ long commHandle,
+        /*[in]*/ long DeviceAddress,
+        /*[in]*/ unsigned char * VersionNum,
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall raw_MF_PCDRead (
+        /*[in]*/ long commHandle,
+        /*[in]*/ long DeviceAddress,
+        /*[in]*/ unsigned char mode,
+        /*[in]*/ unsigned char blkIndex,
+        /*[in]*/ unsigned char blkNum,
+        /*[in,out]*/ unsigned char * key,
+        /*[in,out]*/ unsigned char * buffer,
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall raw_MF_PCDWrite (
+        /*[in]*/ long commHandle,
+        /*[in]*/ long DeviceAddress,
+        /*[in]*/ unsigned char mode,
+        /*[in]*/ unsigned char blkIndex,
+        /*[in]*/ unsigned char blkNum,
+        /*[in,out]*/ unsigned char * key,
+        /*[in,out]*/ unsigned char * buffer,
+        /*[out,retval]*/ VARIANT_BOOL * pVal ) = 0;
+      virtual HRESULT __stdcall get_ReservedParam (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_IsReturnNoLic (
+        /*[out,retval]*/ VARIANT_BOOL * Value ) = 0;
+      virtual HRESULT __stdcall put_IsReturnNoLic (
+        /*[in]*/ VARIANT_BOOL Value ) = 0;
+      virtual HRESULT __stdcall get_LastQuality (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall get_LowestQuality (
+        /*[out,retval]*/ long * Value ) = 0;
+      virtual HRESULT __stdcall put_LowestQuality (
+        /*[in]*/ long Value ) = 0;
+};
+
+struct __declspec(uuid("8aee2e53-7ebe-4b51-a964-009adc68d107"))
+IZKFPEngXEvents : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT OnFeatureInfo (
+        long AQuality );
+    HRESULT OnImageReceived (
+        VARIANT_BOOL * AImageValid );
+    HRESULT OnEnroll (
+        VARIANT_BOOL ActionResult,
+        const _variant_t & ATemplate );
+    HRESULT OnCapture (
+        VARIANT_BOOL ActionResult,
+        const _variant_t & ATemplate );
+    HRESULT OnCaptureToFile (
+        VARIANT_BOOL ActionResult );
+    HRESULT OnEnrollToFile (
+        VARIANT_BOOL ActionResult );
+    HRESULT OnFingerTouching ( );
+    HRESULT OnFingerLeaving ( );
+};
+
+struct __declspec(uuid("ca69969c-2f27-41d3-954d-a48b941c3ba7"))
+ZKFPEngX;
+    // [ default ] interface IZKFPEngX
+    // [ default, source ] dispinterface IZKFPEngXEvents
+
+//
+// Wrapper method implementations
+//
+
+#include "C:\Qt\Qtprojects\begin\begin\biokey.tli"
+
+} // namespace ZKFPEngXControl
+
+#pragma pack(pop)
